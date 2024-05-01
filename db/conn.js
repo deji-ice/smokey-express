@@ -1,6 +1,15 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+import mongoose from "mongoose";
 
 const connectionString = process.env.ATLAS_URI || "";
+
+mongoose.connect(connectionString, function(err){
+  if(err){
+      console.error('Error! ' + err)
+  } else {
+    console.log('Connected to mongodb')      
+  }
+});
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(connectionString, {

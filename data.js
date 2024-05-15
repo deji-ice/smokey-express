@@ -6,7 +6,7 @@ export const data = [
       "city": "New York"
     },
     {
-      "id": 2,
+      "id": 2, 
       "name": "Bob",
       "age": 30,
       "city": "Los Angeles"

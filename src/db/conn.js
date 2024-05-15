@@ -3,13 +3,7 @@ import mongoose from "mongoose";
 
 const connectionString = process.env.ATLAS_URI || "";
 
-mongoose.connect(connectionString, function(err){
-  if(err){
-      console.error('Error! ' + err)
-  } else {
-    console.log('Connected to mongodb')      
-  }
-});
+// mongoose.connect(connectionString);
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(connectionString, {
@@ -23,6 +17,7 @@ const client = new MongoClient(connectionString, {
 let conn;
 try {
   conn = await client.connect();
+  console.log("mongo connected")
 } catch (e) {
   console.error(e);
 }

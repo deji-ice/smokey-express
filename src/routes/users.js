@@ -5,7 +5,7 @@ const userRoutes = express.Router()
 
 userRoutes.get("/users", async (req, res)=>{
     let collection = await db.collection("smokey")
-    let results = await collection.find({}).limit(20).toArray()
+    let results = await collection.find({}).limit(30).toArray()
     res.send(results)
 })
 
